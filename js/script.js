@@ -1,8 +1,12 @@
 let km = prompt("Quanti km vuoi percorrere?");
-console.log(km);
+if (isNaN(km)) {
+ km = prompt("Inserisci un numero!");
+}
 
 let age = prompt("Quanti anni hai?");
-console.log(age);
+if (isNaN(age)) {
+ age = prompt("Inserisci un numero!");
+}
 
 let prezzoTratta = km * 0.21;
 let sconto;
