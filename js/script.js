@@ -1,11 +1,20 @@
+alert(
+ "Inserisci i tuoi dati per calcolare il prezzo del biglietto. Sconto del 20% per gli under 18. Sconto del 40% per gli over 65"
+);
+
 let km = prompt("Quanti km vuoi percorrere?");
-if (isNaN(km)) {
+while (isNaN(km)) {
  km = prompt("Inserisci un numero!");
 }
 
 let age = prompt("Quanti anni hai?");
-if (isNaN(age)) {
- age = prompt("Inserisci un numero!");
+while (isNaN(age) || age > 99) {
+ if (isNaN(age)) {
+  age = prompt("Inserisci un numero!");
+ }
+ if (age > 99) {
+  age = prompt("Inserisci un numero minore di 99");
+ }
 }
 
 let prezzoTratta = km * 0.21;
@@ -20,7 +29,6 @@ if (age < 18) {
  color = "red";
 } else {
  sconto = 0;
- color = "black";
 }
 
 prezzoTratta = prezzoTratta - sconto;
